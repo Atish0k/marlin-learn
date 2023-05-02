@@ -1,31 +1,32 @@
 <?php
-$data = [
-    [
-        'name' => 'Мои задачи',
-        'description' => '7 / 10',
-        'progress' => 'bg-fusion-400',
-        'width' => '65'
-    ],
-    [
-        'name' => 'Емкость диска',
-        'description' => '440 TB',
-        'progress' => 'bg-success-500',
-        'width' => '34'
-    ],
-    [
-        'name' => 'Пройдено уроков',
-        'description' => '77%',
-        'progress' => 'bg-info-400',
-        'width' => '77'
-    ],
-    [
-        'name' => 'Осталось дней',
-        'description' => '2 дня',
-        'progress' => 'bg-primary-300',
-        'width' => '84'
-    ]
-];
+    $users = [
+        [
+            'name' => 'Sunny A. (UI/UX Expert)',
+            'smallName' => 'sunny',
+            'role' => 'Lead Author',
+            'email' => '@myplaneticket'
+        ],
+        [
+            'name' => 'Jos K. (ASP.NET Developer)',
+            'smallName' => 'josh',
+            'role' => 'Partner &amp; Contributor',
+            'email' => '@atlantez'
+        ],
+        [
+            'name' => 'Jovanni L. (PHP Developer)',
+            'smallName' => 'jovanni',
+            'role' => 'Partner &amp; Contributor',
+            'email' => '@lodev09'
+        ],
+        [
+            'name' => 'Roberto R. (Rails Developer)',
+            'smallName' => 'roberto',
+            'role' => 'Partner &amp; Contributor',
+            'email' => '@sildur'
+        ],
+    ];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,16 +61,24 @@ $data = [
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <?php foreach ($data as $item):?>
-                            <div class="d-flex mt-2">
-                                <?php echo $item['name']?>
-                                <span class="d-inline-block ml-auto"><?php echo $item['description']?></span>
+                           <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
+                               <?php foreach ($users as $user):?>
+                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                <img src="img/demo/authors/<?php echo $user['smallName']?>.png" alt="Sunny A." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                <div class="ml-2 mr-3">
+                                    <h5 class="m-0">
+                                        <?php echo $user['name']?>
+                                        <small class="m-0 fw-300">
+                                            <?php echo $user['role']?>
+                                        </small>
+                                    </h5>
+                                    <a href="https://twitter.com/<?php echo $user['email']?>" class="text-info fs-sm" target="_blank"><?php echo $user['email']?></a>
+                                    -
+                                    <a href="https://wrapbootstrap.com/user/myorange" class="text-info fs-sm" target="_blank" title="Contact <?php echo $user['smallName']?>"><i class="fal fa-envelope"></i></a>
+                                </div>
                             </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar <?php echo $item['progress']?>" role="progressbar" style="width: <?php echo $item['width']?>%;" aria-valuenow="<?php echo $item['width']?>" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <?php endforeach;?>
-
+                               <?php endforeach;?>
+                        </div>
                         </div>
                     </div>
                 </div>

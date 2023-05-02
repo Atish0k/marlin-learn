@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/marlinlearn.loc.iml" filepath="$PROJECT_DIR$/.idea/marlinlearn.loc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/marlin-learn.iml" filepath="$PROJECT_DIR$/.idea/marlin-learn.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,5 @@
 <?php
+echo 'Я просто проверит';
     $users = [
         [
             'name' => 'Sunny A. (UI/UX Expert)',

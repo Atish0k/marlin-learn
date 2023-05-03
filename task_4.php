@@ -1,13 +1,12 @@
 <?php
     $images = [
-        ['number_image' => '21'],
-        ['number_image' => '22'],
-        ['number_image' => '23'],
-        ['number_image' => '24'],
-        ['number_image' => '25'],
-        ['number_image' => '26']
+        ['number_source' => 'img/demo/gallery/21.jpg', 'img_responsive' => 'img/demo/gallery/thumb/21.jpg'],
+        ['number_source' => 'img/demo/gallery/22.jpg' , 'img_responsive' => 'img/demo/gallery/thumb/22.jpg'],
+        ['number_source' => 'img/demo/gallery/23.jpg', 'img_responsive' => 'img/demo/gallery/thumb/23.jpg'],
+        ['number_source' => 'img/demo/gallery/24.jpg', 'img_responsive' => 'img/demo/gallery/thumb/24.jpg'],
+        ['number_source' => 'img/demo/gallery/25.jpg' , 'img_responsive' => 'img/demo/gallery/thumb/25.jpg'],
+        ['number_source' => 'img/demo/gallery/26.jpg', 'img_responsive' => 'img/demo/gallery/thumb/26.jpg']
     ];
-    $arr = [21,22,23,24,25,26];
 ?>
 
 <!DOCTYPE html>
@@ -45,32 +44,12 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <!-- <div class="panel-tag">
-                                <p>Сформируйте массив данных и выведите полностью альбом.</p>
-                            </div> -->
                             <div id="js-lightgallery">
-                                <?php foreach($arr as $arrs):?>
-                                <a class="" href="img/demo/gallery/<?php echo $arrs?>.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/<?php echo $arrs?>.jpg" alt="image">
+                                <?php foreach($images as $image):?>
+                                <a class="" href="<?php echo $image['number_source']?>">
+                                    <img class="img-responsive" src="<?php echo $image['img_responsive']?>" alt="image">
                                 </a>
                                 <?php endforeach;?>
-
-<!--                                <a class="" href="img/demo/gallery/22.jpg">-->
-<!--                                    <img class="img-responsive" src="img/demo/gallery/thumb/22.jpg" alt="image">-->
-<!--                                </a>-->
-<!--                                <a class="" href="img/demo/gallery/23.jpg">-->
-<!--                                    <img class="img-responsive" src="img/demo/gallery/thumb/23.jpg" alt="image">-->
-<!--                                </a>-->
-<!--                                <a class="" href="img/demo/gallery/24.jpg">-->
-<!--                                    <img class="img-responsive" src="img/demo/gallery/thumb/24.jpg" alt="image">-->
-<!--                                </a>-->
-<!--                                <a class="" href="img/demo/gallery/25.jpg">-->
-<!--                                    <img class="img-responsive" src="img/demo/gallery/thumb/25.jpg" alt="image">-->
-<!--                                </a>-->
-<!--                                <a class="" href="img/demo/gallery/26.jpg">-->
-<!--                                    <img class="img-responsive" src="img/demo/gallery/thumb/26.jpg" alt="image">-->
-<!--                                </a>-->
-
                             </div>
                         </div>
                     </div>

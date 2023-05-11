@@ -1,5 +1,4 @@
 <?php
-echo 'Я просто проверит';
     $users = [
         [
             'name' => 'Sunny A. (UI/UX Expert)',
@@ -64,20 +63,27 @@ echo 'Я просто проверит';
                         <div class="panel-content">
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                                <?php foreach ($users as $user):?>
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/<?php echo $user['smallName']?>.png" alt="Sunny A." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
+                                   <div class="<?php if($user['name'] == 'Jovanni L. (PHP Developer)' || $user['name'] =='Roberto R. (Rails Developer)'){echo 'banned';}?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+
+                                       <img src="img/demo/authors/<?php echo $user['smallName']?>.png" alt="Sunny A." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                <div class=" ml-2 mr-3">
+
+
                                     <h5 class="m-0">
                                         <?php echo $user['name']?>
                                         <small class="m-0 fw-300">
                                             <?php echo $user['role']?>
                                         </small>
                                     </h5>
+
                                     <a href="https://twitter.com/<?php echo $user['email']?>" class="text-info fs-sm" target="_blank"><?php echo $user['email']?></a>
                                     -
                                     <a href="https://wrapbootstrap.com/user/myorange" class="text-info fs-sm" target="_blank" title="Contact <?php echo $user['smallName']?>"><i class="fal fa-envelope"></i></a>
                                 </div>
+
                             </div>
+
+
                                <?php endforeach;?>
                         </div>
                         </div>

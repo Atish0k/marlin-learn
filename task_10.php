@@ -1,3 +1,7 @@
+<?php
+session_start();
+require ('save_10.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +23,7 @@
     </head>
     <body class="mod-bg-1 mod-nav-link ">
         <main id="js-page-content" role="main" class="page-content">
+
             <div class="col-md-6">
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
@@ -32,11 +37,16 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <ol class="breadcrumb page-breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                                <li class="breadcrumb-item"><a href="#">PHP</a></li>
-                                <li class="breadcrumb-item active">Функции</li>
-                            </ol>
+                            <div class="panel-content">
+                                <div class="form-group">
+                                    <form action="save_10.php" method="post">
+                                        <label class="form-label" for="simpleinput">Text</label>
+                                        <input type="text" name = "send-text" id="simpleinput" class="form-control">
+                                        <button class="btn btn-success mt-3" type = "submit">Submit</button>
+                                    </form>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

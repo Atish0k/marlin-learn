@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,6 @@
     </head>
     <body class="mod-bg-1 mod-nav-link ">
         <main id="js-page-content" role="main" class="page-content">
-
             <div class="col-md-6">
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
@@ -35,10 +38,17 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <form action="">
+                                    <div class="alert  <?php if($_SESSION['res'] === true){
+                                    echo 'alert-success';}
+                                    else{ echo 'alert-danger';}
+                                    ?> fade show" role="alert">
+                                        You should check in on some of those fields below.
+                                    </div>
+                                    <form action="save_10.php" method="post">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                        <input type="text" name = "send-text" id="simpleinput" class="form-control">
+                                        <button class="btn btn-success mt-3" type="submit">Submit</button>
+                                        <?php echo $_SESSION['textSes']?>
                                     </form>
                                 </div>
                             </div>

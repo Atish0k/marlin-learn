@@ -1,3 +1,31 @@
+<?php
+$datas = [
+    [
+        'row_number' => 1,
+        'FName' => 'Mark',
+        'LName' => 'Otto',
+        'Username' => '@mdo'
+    ],
+    [
+        'row_number' => 2,
+        'FName' => 'Jacob',
+        'LName' => 'Thornton',
+        'Username' => '@fat'
+    ],
+    [
+        'row_number' => 3,
+        'FName' => 'Larry',
+        'LName' => 'the Bird',
+        'Username' => '@twitter'
+    ],
+    [
+        'row_number' => 4,
+        'FName' => 'Larry the Bird',
+        'LName' => 'Bird',
+        'Username' => '@twitter'
+    ]
+]
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,50 +75,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach ($datas as $data):?>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <th scope="row"><?php echo $data['row_number']?></th>
+                                            <td><?php echo $data['FName']?></td>
+                                            <td><?php echo $data['LName']?></td>
+                                            <td><?php echo $data['Username']?></td>
                                             <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
+                                                <a href="show.php?id=<?php echo $data['row_number']?>" class="btn btn-info">Редактировать</a>
+                                                <a href="edit.php?id=<?php echo $data['row_number']?>" class="btn btn-warning">Изменить</a>
+                                                <a href="delete.php?id=<?php echo $data['row_number']?>" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Larry the Bird</td>
-                                            <td> Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
+                                        <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>

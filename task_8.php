@@ -1,3 +1,19 @@
+<?php
+$menu = [
+    [
+        'name' => 'Главная',
+        'is_active' =>  true
+    ],
+    [
+        'name' => 'PHP',
+        'is_active' =>  true
+    ],
+    [
+        'name' => 'Функции',
+        'is_active' =>  false
+    ]
+];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,18 +48,13 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <div class="panel-content">
-                                <div class="form-group">
-                                    <div class="alert alert-danger fade show" role="alert">
-                                        You should check in on some of those fields below.
-                                    </div>
-                                    <form action="">
-                                        <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <ol class="breadcrumb page-breadcrumb">
+                                <?php foreach($menu as $item):?>
+                                    <?php if ($item['is_active'] === true):?>
+                                        <li class="breadcrumb-item"><a href="#"><?php echo $item['name']?></a></li>
+                                    <?php endif; ?>
+                                <?php endforeach;?>
+                            </ol>
                         </div>
                     </div>
                 </div>

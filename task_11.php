@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,17 +38,15 @@ session_start();
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <div class="alert  <?php if($_SESSION['res'] === true){
-                                    echo 'alert-success';}
-                                    else{ echo 'alert-danger';}
-                                    ?> fade show" role="alert">
-                                        You should check in on some of those fields below.
+                                    <?php if(isset($_SESSION['danger'])):?>
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        <?php echo $_SESSION['danger']; unset($_SESSION['danger'])?>
                                     </div>
+                                    <?php endif;?>
                                     <form action="save_10.php" method="post">
                                         <label class="form-label" for="simpleinput">Text</label>
                                         <input type="text" name = "send-text" id="simpleinput" class="form-control">
                                         <button class="btn btn-success mt-3" type="submit">Submit</button>
-                                        <?php echo $_SESSION['textSes']?>
                                     </form>
                                 </div>
                             </div>

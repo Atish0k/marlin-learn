@@ -1,10 +1,8 @@
 <?php
 session_start();
 require ('connect.php');
-$emailUser = 'd1@mail.ru';
+$emailUser = $_POST['email'];
 $passwordUser = $_POST['password'];
-
-$_SESSION['email'] = $emailUser;
 
 $sql = 'SELECT * FROM `users` WHERE `email` = :emailUser';
 $statement = $pdo->prepare($sql);
@@ -13,14 +11,15 @@ $task = $statement->fetch();
 if(!empty($task)){
     $message = 'Введенный email уже есть в базе';
     $_SESSION['warning'] = $message;
+    header('Location: task_12.php');
     exit();
 }
 
-
+$hashedPassword = password_hash($passwordUser, PASSWORD_DEFAULT);
 $sql = 'INSERT INTO `users` (`email` , `pass`) VALUES (:emailUser, :passwordUser)';
 $statement = $pdo->prepare($sql);
-$statement->execute(['emailUser' => $emailUser, 'passwordUser' => $passwordUser]);
+$statement->execute(['emailUser' => $emailUser, 'passwordUser' => $hashedPassword]);
 $message = 'Регистрация успешна';
 $_SESSION['success'] = $message;
-header('Location: task_12.php')
+header('Location: task_12.php');
 ?>

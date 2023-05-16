@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +41,13 @@
                         <div class="form-group">
                                 <?php if(isset($_SESSION['warning'])):?>
                                 <div class="alert alert-danger fade show" role="alert">
-                                   <?php ?>
+                                   <?php echo $_SESSION['warning']; unset($_SESSION['warning']);?>
                                 </div>
+                                <?php endif;?>
+                                <?php if(isset($_SESSION['success'])):?>
+                                    <div class="alert alert-success fade show" role="alert">
+                                        <?php echo $_SESSION['success']; unset($_SESSION['success']);?>
+                                    </div>
                                 <?php endif;?>
                             <form action="task_12_handler.php" method="post">
                                 <div class="form-group">

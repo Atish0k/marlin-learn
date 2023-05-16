@@ -1,3 +1,7 @@
+<?php
+session_start();
+var_dump($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
         </title>
         <meta name="description" content="Chartist.html">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+        <metac name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
         <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
         <link id="appbundle" rel="stylesheet" media="screen, print" href="css/app.bundle.css">
         <link id="myskin" rel="stylesheet" media="screen, print" href="css/skins/skin-master.css">
@@ -35,11 +39,13 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <div class="alert alert-info">Ваше сообщение выводится тут</div>
-                                    <form action="">
+                                    <?php if(isset($_SESSION['text'])):?>
+                                    <div class="alert alert-info"><?php echo $_SESSION['text'] ; unset($_SESSION['text'])?></div>
+                                    <?php endif;?>
+                                    <form action="task_13_handler.php" method="post">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                        <input type="text" id="simpleinput" name = "textInForm" class="form-control">
+                                        <button class="btn btn-success mt-3" type="submit">Submit</button>
                                     </form>
                                 </div>
                             </div>

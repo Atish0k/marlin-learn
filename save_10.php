@@ -43,6 +43,6 @@ $sql = "INSERT INTO `users` (`text`) VALUES (:text)";
 $statement = $pdo->prepare($sql);
 $statement->execute(['text' => $text]);
 $message = 'Запись успешно добавлена';
-$_SESSION['danger'] = $message;
+$_SESSION['success'] = $message;
 header('Location: /task_11.php');
 ?>

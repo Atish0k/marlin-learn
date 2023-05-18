@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +37,28 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <div class="alert alert-success fade show" role="alert">
-                                        Здравствуйте, ИМЯ_ПОЛЬЗОВАТЕЛЯ.
+                                    <?php if(empty($_SESSION['success'])):?>
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        Неверный логин или пароль
                                     </div>
-                                    <a href="#" class="btn btn-info">Выйти</a>
+                                    <?php unset($_SESSION['success'])?>
+                                    <?php elseif(isset($_SESSION['success'])):?>
+                                        <div class="alert alert-success fade show" role="alert">
+                                            Ввели все правильно
+                                        </div>
+
+                                        <?php unset($_SESSION['success'])?>
+                                    <?php endif;?>
+                                    <form action="auth.php" method="post">
+                                        <div class="form-group">
+                                        	<label class="form-label" for="simpleinput">Email</label>
+                                        <input type="text" id="simpleinput" class="form-control" name="email">
+                                        </div>
+
+                                        <label class="form-label" for="simpleinput">Password</label>
+                                        <input type="password" id="simpleinput" class="form-control" name="password">
+                                        <button class="btn btn-success mt-3" type="submit">Submit</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

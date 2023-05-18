@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,19 +37,13 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <div class="alert alert-danger fade show" role="alert">
-                                        Неверный логин или пароль
+                                    <div class="alert alert-success fade show" role="alert">
+                                        Здравствуйте, <?php echo $_SESSION['emailUser'];?>
                                     </div>
-                                    <form action="">
-                                        <div class="form-group">
-                                        	<label class="form-label" for="simpleinput">Email</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        </div>
-
-                                        <label class="form-label" for="simpleinput">Password</label>
-                                        <input type="password" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                    <form action="logout.php" method="post">
+                                        <button class="btn btn-info" type="submit">Выйти</button>
                                     </form>
+
                                 </div>
                             </div>
                         </div>

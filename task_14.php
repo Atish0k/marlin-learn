@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +38,13 @@
                             <div class="panel-content">
                                 <div class="form-group">
                                     <div class="alert alert-info fade show" role="alert">
-                                        Кнопка была нажата: <b>0</b> раз
+                                        Кнопка была нажата: <b><?php echo (int) $_SESSION['click'];?></b> раз
                                     </div>
-                                    <form action="">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                    <form action="counter_14.php" method="post">
+                                        <button class="btn btn-success mt-3" type="submit" name = 'buttonForm'>Submit</button>
+                                    </form>
+                                    <form action="counter_14.php" method="post">
+                                        <button class="btn btn-danger mt-3" type="submit" name = 'buttonReset'>Сброс</button>
                                     </form>
                                 </div>
                             </div>

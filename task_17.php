@@ -37,12 +37,12 @@
                             <div class="panel-content">
                                 <div class="panel-content">
                                     <div class="form-group">
-                                        <form action="">
+                                        <form action="task_17_handler.php" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
-                                            <input type="file" id="simpleinput" class="form-control">
+                                            <input type="file" id="simpleinput" class="form-control" name = "image">
                                             </div>
-                                            <button class="btn btn-success mt-3">Submit</button>
+                                            <button class="btn btn-success mt-3" type="submit">Submit</button>
                                         </form>
                                     </div>
                                 </div>

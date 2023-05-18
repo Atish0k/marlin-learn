@@ -11,7 +11,7 @@ $task = $statement->fetch();
 if(!empty($task)){
     $message = 'Введенный email уже есть в базе';
     $_SESSION['warning'] = $message;
-    header('Location: task_12.php');
+    header('Location: task_12_create.php');
     exit();
 }
 
@@ -21,5 +21,5 @@ $statement = $pdo->prepare($sql);
 $statement->execute(['emailUser' => $emailUser, 'passwordUser' => $hashedPassword]);
 $message = 'Регистрация успешна';
 $_SESSION['success'] = $message;
-header('Location: task_12.php');
+header('Location: task_12_create.php');
 ?>

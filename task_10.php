@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('save_10.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

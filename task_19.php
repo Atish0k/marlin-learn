@@ -37,12 +37,12 @@
                             <div class="panel-content">
                                 <div class="panel-content">
                                     <div class="form-group">
-                                        <form action="">
+                                        <form action="task_19_handler.php" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
-                                            <input type="file" id="simpleinput" class="form-control">
+                                            <input type="file" id="simpleinput" class="form-control" type = "file" name="images[]" multiple>
                                             </div>
-                                            <button class="btn btn-success mt-3">Submit</button>
+                                            <button class="btn btn-success mt-3" type = "submit">Submit</button>
                                         </form>
                                     </div>
                                 </div>
@@ -66,17 +66,11 @@
                             <div class="panel-content">
                                 <div class="panel-content image-gallery">
                                     <div class="row">
+                                        <?php foreach ($images as $image):?>
                                         <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/1.jpg">
+                                            <img src="upload/<?php echo $image;?>">
                                         </div>
-
-                                        <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/2.jpg">
-                                        </div>
-
-                                        <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/3.jpg">
-                                        </div>
+                                        <?php endforeach;?>
                                     </div>
                                 </div>
                             </div>

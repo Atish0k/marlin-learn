@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,12 +40,12 @@
                             <div class="panel-content">
                                 <div class="panel-content">
                                     <div class="form-group">
-                                        <form action="">
+                                        <form action="task_17_handler.php" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
-                                            <input type="file" id="simpleinput" class="form-control">
+                                            <input type="file" id="simpleinput" class="form-control" name = "image">
                                             </div>
-                                            <button class="btn btn-success mt-3">Submit</button>
+                                            <button class="btn btn-success mt-3" type="submit">Submit</button>
                                         </form>
                                     </div>
                                 </div>
@@ -66,18 +69,14 @@
                             <div class="panel-content">
                                 <div class="panel-content image-gallery">
                                     <div class="row">
+                                        <?php foreach ($_SESSION['images'] as $image):?>
                                         <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/1.jpg">
-                                            <a class="btn btn-danger" href="#" onclick="confirm('Вы уверены?');">Удалить</a>
+                                            <img src="/upload/<?php echo $image['image_name']?>">
+                                            <form action="task_18_handler.php" method="get">
+                                                <button class="btn btn-danger" onclick="confirm('Вы уверены?');" value="<?php echo $image['id']?>"  name="id_image" type="submit">Удалить</button>
+                                            </form>
                                         </div>
-                                        <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/2.jpg">
-                                            <a class="btn btn-danger" onclick="confirm('Вы уверены?');" href="#">Удалить</a>
-                                        </div>
-                                        <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/3.jpg">
-                                            <a class="btn btn-danger" onclick="confirm('Вы уверены?');" href="#">Удалить</a>
-                                        </div>
+                                        <?php endforeach;?>
                                     </div>
                                 </div>
                             </div>

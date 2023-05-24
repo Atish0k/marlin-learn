@@ -55,9 +55,22 @@ session_start();
                                     <input type="text" name="email" id="simpleinput" class="form-control">
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="form-label" for="simpleinput">Login</label>
+                                    <input type="text" name="login" id="simpleinput" class="form-control">
+                                </div>
+
+                                <div class="form-group">
                                 <label class="form-label" for="simpleinput">Password</label>
                                 <input type="password" name="password" id="simpleinput" class="form-control">
-                                <button class="btn btn-success mt-3">Submit</button>
+                                </div>
+                                <div class="form-group">
+                                <label class="form-label" for="simpleinput">Repeat Password</label>
+                                <input type="password" name="repeatPassword" id="simpleinput" class="form-control">
+                                </div>
+                                <label class="form-label" for="simpleinput">Согласие на обработку персональных данных</label>
+                                <input type="checkbox" checked="checked" id="simpleinput" name = "checkbox">
+                                <button class="btn btn-success mt-3" type = "submit">Sign Up</button>
                             </form>
                         </div>
                     </div>

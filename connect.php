@@ -1,7 +1,7 @@
 <?php
 $driver = 'mysql';
 $host = '127.0.0.1';
-$db_name = 'marlin-pc';
+$db_name = 'my_db1';
 $db_user = 'root';
 $db_password = '';
 $charset = 'utf8';
